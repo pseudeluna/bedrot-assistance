@@ -1,0 +1,28 @@
+<div id="welcome-screen">
+    <h1 id="welcome-text"></h1>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const text = "lobotomy with a side fries";
+        let i = 0;
+        const speed = 50; // Typing speed in milliseconds
+        const welcomeText = document.getElementById("welcome-text");
+        const welcomeScreen = document.getElementById("welcome-screen");
+    
+        function typeEffect() {
+            if (i < text.length) {
+                welcomeText.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, speed);
+            } else {
+                // Fade out the welcome screen after 1 second
+                setTimeout(() => {
+                    welcomeScreen.classList.add("hidden");
+                }, 1000);
+            }
+        }
+    
+        typeEffect();
+    });
+    </script>
+</div>
+
+<div id="root"></div>
